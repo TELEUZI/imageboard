@@ -1,10 +1,11 @@
-for (let i = 0; i < document.querySelectorAll('.zz').length; i++) {
-    let g = document.querySelectorAll('.zz')[i];
-    g.onclick = function() {
-        let zzz = document.querySelectorAll('.post')[i];
-        zzz.classList.toggle('close');
-    }
-}
+const closeThreadButtons = document.querySelectorAll('.zz')
+document.querySelector('#app').addEventListener('click', (event) => {
+    closeThreadButtons.forEach(button => {
+        if (event.target === button) {
+            button.previousElementSibling.classList.toggle('close');
+        }
+    });
+});
 let texts = document.querySelectorAll('.thread-text');
 
 for (let text of texts) {
