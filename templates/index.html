@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/normalize.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+
+
+</head>
+
+<body>
+    <header>
+        <div class="header-wrapper">
+            <div class="header-content">
+                <a href="{{url_for('board.index')}}">Доски</a>
+                <a href="{{url_for('another_board')}}">another_board</a>
+                <a href="{{url_for('index')}}">Помощь</a>
+                <a href="">Настройки</a>
+            </div>
+        </div>
+    </header>
+    <nav>
+        bar
+    </nav>
+    {% block threads%} {% endblock threads%}
+
+    <div>it's {{name}} page!</div>
+
+    <script src="../static/ind.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+{%extends 'index.html'%} {% block threads%}
+<main>
+    <div class="main-wrapper">
+
+        <div id="app">
+            <form action="" method="post" @submit="f">
+                <label for="thread_name">thread_name</label>
+                <input name="thread_name" v-model="thread_name" type="text">
+                <label for="thread_name">username</label>
+                <input name="username" v-model="username" type="text">
+                <label class="z" for="thread_name">text</label>
+                <textarea class="z" name="thread_text" v-model="thread_text" id="" cols="30" rows="10"></textarea>
+                <input type="submit" value="go!">
+            </form>
+            <span :title="mes" @click="getsucked">
+                ${message}          
+            </span> {%if (not th)%} {% for item in dick[::-1]%}
+            <div class="main">
+                <div class="thread-number">
+                    <a href="{{url_for('board')}}{{item[0]}}">{{item[0]}}</a> </div>
+                <div class="thread-name ">{{item[1]}} </div>
+                <div class="username ">{{item[2]}} </div>
+                <div class="thread-text ">{{item[3]}} </div>
+                <div class="thread-time ">{{item[4]}} </div>
+            </div>
+            <button class="zz">Cкрыть/раскрыть нить </button> {%endfor%} {%else%} {% for item in dick[::-1]%}
+            <div class="thread-number">
+                {{item[0]}}</div>
+            <div class="thread-name ">{{item[1]}} </div>
+            <div class="username ">{{item[2]}} </div>
+            <div class="thread-text "> </div>
+            <div class="thread-time ">{{item[4]}} </div>
+            {%endfor%} {%endif%}
+        </div>
+
+
+
+    </div>
+    </div>
+    </div>
+    <script>
+    </script>
+</main>
+{% endblock threads%}
