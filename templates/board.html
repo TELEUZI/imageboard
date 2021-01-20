@@ -1,0 +1,45 @@
+{%extends 'index.html'%} {% block threads%}
+<main>
+    <div class="main-wrapper">
+
+        <div id="app">
+            <form action="http://127.0.0.1:5000/board" method="post" @submit="f">
+                <label for="thread_name">thread_name</label>
+                <input name="thread_name" v-model="thread_name" type="text">
+                <label for="thread_name">username</label>
+                <input name="username" v-model="username" type="text">
+                <label class="z" for="thread_name">text</label>
+                <textarea class="z" name="thread_text" v-model="thread_text" id="" cols="30" rows="10"></textarea>
+                <input type="submit" value="go!">
+            </form>
+            <span :title="mes" @click="getsucked">
+                ${message}          
+            </span> {%if (not th)%} {% for item in dick[::-1]%}
+            <div class="main">
+                <div class="thread-number">
+                    <a href="{{url_for('board')}}/{{item[0]}}">{{item[0]}}</a> </div>
+                <div class="thread-name ">{{item[1]}} </div>
+                <div class="username ">{{item[2]}} </div>
+                <div class="thread-text ">{{item[3]}} </div>
+                <div class="thread-time ">{{item[4]}} </div>
+            </div>
+            <button class="zz">Cкрыть/раскрыть нить </button> {%endfor%} {%else%}
+            <div class="thread-number">
+                {{dick[::-1][0]}}</div>
+            <div class="thread-name ">{{dick[::-1][1]}} </div>
+            <div class="username ">{{dick[::-1][2]}} </div>
+            <div class="thread-text ">{{dick[::-1][3]}} </div>
+            <div class="thread-time ">{{dick[::-1][4]}} </div>
+
+            {%endif%}
+        </div>
+
+
+
+    </div>
+    </div>
+    </div>
+    <script>
+    </script>
+</main>
+{% endblock threads%}
